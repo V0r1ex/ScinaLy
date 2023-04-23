@@ -1,0 +1,167 @@
+@import '../constants'
+@import '../_mixins'
+
+.slider_bl .wrapper 
+    max-width: 70%
+    margin: 1em auto
+    position: relative
+    z-index: 0
+
+.slider-labels
+    position: absolute
+    z-index: 1
+    width: 100%
+    @include flex_center()
+    justify-content: space-between
+    font-size: $fz-16
+    .slider-label
+        background-color: rgba(61, 61, 61, 0.5)
+        color: #fff
+        text-transform: uppercase
+        padding: 10px
+
+.slider_bl input 
+    display: none
+
+.slider_bl .inner 
+    width: 500%
+    line-height: 0
+
+.slider_bl img 
+    width: 20%
+    height: 100%
+    float: left
+    position: relative
+
+.slider_bl .slider-prev-next-control 
+    height: 50px
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 120%
+    transform: translate(-50%, -50%)
+
+.slider_bl .slider-prev-next-control label 
+    display: none
+    width: 40px
+    height: 40px
+    border-radius: 50%
+
+.slider_bl .slider-prev-next-control label:hover:after 
+    color: $blue !important
+ 
+.slider_bl .slider-dot-control 
+    position: absolute
+    width: 100%
+    text-align: center
+    margin-top: 10px
+
+.slider_bl .slider-dot-control label 
+    cursor: pointer
+    border-radius: 5px
+    display: inline-block
+    width: 10px
+    height: 10px
+    background: #d6d6d6
+    transition: all 0.3s
+
+.slider_bl .slider-dot-control label:hover 
+    background: $blue
+
+.slider_bl .slider-wrapper 
+    width: 100%
+    overflow: hidden
+    transform: translateZ(0)
+    transition: all 0.5s ease-out
+
+.slider_bl .slider-wrapper .inner 
+    transform: translateZ(0)
+    transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1)
+
+.slider_bl #slide1:checked ~ .slider-prev-next-control label:nth-child(2)::after,
+.slider_bl #slide1:checked ~ .slider-prev-next-control label:nth-child(5)::after,
+.slider_bl #slide2:checked ~ .slider-prev-next-control label:nth-child(1)::after,
+.slider_bl #slide2:checked ~ .slider-prev-next-control label:nth-child(3)::after,
+.slider_bl #slide3:checked ~ .slider-prev-next-control label:nth-child(2)::after,
+.slider_bl #slide3:checked ~ .slider-prev-next-control label:nth-child(4)::after,
+.slider_bl #slide4:checked ~ .slider-prev-next-control label:nth-child(3)::after,
+.slider_bl #slide4:checked ~ .slider-prev-next-control label:nth-child(5)::after,
+.slider_bl #slide5:checked ~ .slider-prev-next-control label:nth-child(1)::after,
+.slider_bl #slide5:checked ~ .slider-prev-next-control label:nth-child(4)::after 
+    font-family: FontAwesome
+    font-style: normal
+    font-weight: 400
+    text-decoration: inherit
+    margin: 0
+    line-height: 38px
+    font-size: 3em
+    display: block
+    color: #d6d6d6
+    cursor: pointer
+    transition: .3s 
+
+.slider_bl #slide1:checked ~ .slider-prev-next-control label:nth-child(2)::after,
+.slider_bl #slide2:checked ~ .slider-prev-next-control label:nth-child(3)::after,
+.slider_bl #slide3:checked ~ .slider-prev-next-control label:nth-child(4)::after,
+.slider_bl #slide4:checked ~ .slider-prev-next-control label:nth-child(5)::after,
+.slider_bl #slide5:checked ~ .slider-prev-next-control label:nth-child(1)::after 
+    content: "\f105"
+    padding-left: 15px
+
+.slider_bl #slide1:checked ~ .slider-prev-next-control label:nth-child(2),
+.slider_bl #slide2:checked ~ .slider-prev-next-control label:nth-child(3),
+.slider_bl #slide3:checked ~ .slider-prev-next-control label:nth-child(4),
+.slider_bl #slide4:checked ~ .slider-prev-next-control label:nth-child(5),
+.slider_bl #slide5:checked ~ .slider-prev-next-control label:nth-child(1) 
+    display: block
+    float: right
+    margin-right: 5px
+
+.slider_bl #slide1:checked ~ .slider-prev-next-control label:nth-child(5),
+.slider_bl #slide2:checked ~ .slider-prev-next-control label:nth-child(1),
+.slider_bl #slide3:checked ~ .slider-prev-next-control label:nth-child(2),
+.slider_bl #slide4:checked ~ .slider-prev-next-control label:nth-child(3),
+.slider_bl #slide5:checked ~ .slider-prev-next-control label:nth-child(4) 
+    display: block
+    float: left
+    margin-left: 5px
+
+.slider_bl #slide1:checked ~ .slider-prev-next-control label:nth-child(5)::after,
+.slider_bl #slide2:checked ~ .slider-prev-next-control label:nth-child(1)::after,
+.slider_bl #slide3:checked ~ .slider-prev-next-control label:nth-child(2)::after,
+.slider_bl #slide4:checked ~ .slider-prev-next-control label:nth-child(3)::after,
+.slider_bl #slide5:checked ~ .slider-prev-next-control label:nth-child(4)::after 
+    content: "\f104"
+    padding-left: 8px
+
+.slider_bl #slide1:checked ~ .slider-dot-control label:nth-child(1),
+.slider_bl #slide2:checked ~ .slider-dot-control label:nth-child(2),
+.slider_bl #slide3:checked ~ .slider-dot-control label:nth-child(3),
+.slider_bl #slide4:checked ~ .slider-dot-control label:nth-child(4),
+.slider_bl #slide5:checked ~ .slider-dot-control label:nth-child(5) 
+    background: $blue
+
+.slider_bl #slide1:checked ~ .slider-wrapper img:nth-child(1) .info,
+.slider_bl #slide2:checked ~ .slider-wrapper img:nth-child(2) .info,
+.slider_bl #slide3:checked ~ .slider-wrapper img:nth-child(3) .info,
+.slider_bl #slide4:checked ~ .slider-wrapper img:nth-child(4) .info,
+.slider_bl #slide5:checked ~ .slider-wrapper img:nth-child(5) .info 
+    opacity: 1
+
+.slider_bl #slide1:checked ~ .slider-wrapper .inner 
+    margin-left: 0
+
+.slider_bl #slide2:checked ~ .slider-wrapper .inner 
+    margin-left: -100%
+
+.slider_bl #slide3:checked ~ .slider-wrapper .inner 
+    margin-left: -200%
+
+.slider_bl #slide4:checked ~ .slider-wrapper .inner 
+    margin-left: -300%
+
+.slider_bl #slide5:checked ~ .slider-wrapper .inner 
+    margin-left: -400%
+
+
+

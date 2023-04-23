@@ -1,0 +1,90 @@
+@import '_mixins'
+
+$fz-14: 14px
+$fz-16: 16px
+$fz-20: 20px
+$fz-24: 24px
+$fz-28: 28px
+$fz-32: 32px
+$c-p: #6e6e6e
+$base-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.05)
+$c-h:#1b1b1b
+$blue: #3f7ddf
+$gray: #f6f7f9
+
+html 
+    scroll-behavior: smooth
+
+body
+    min-height: 100vh
+    position: relative
+    font-size: 18px
+    font-family: Arial, Helvetica, sans-serif
+    color: $c-h
+
+p
+    color: $c-p
+
+h1, h2, h3, h4, h5, h6
+    color: $c-h
+    text-transform: uppercase
+
+a
+    text-decoration: none
+    color: $blue
+
+button
+    text-transform: uppercase
+    font-weight: bold
+
+.main
+    position: relative
+    display: unset
+
+.section-inner
+    position: relative
+    z-index: 1
+
+.section-outer
+    position: relative
+    z-index: 0
+    padding: 80px 0
+    @include flex_center()
+
+.base-btn
+    background-color: $blue
+    color: #fff
+    padding: 20px 40px 
+    font-size: $fz-16
+    border: 2px solid transparent
+    @include flex_center()
+    &:active
+        border-color: lighten($blue, 20)
+
+.form-int, .form-btn
+    border: 1px solid $gray
+    transition: .4s
+    padding: 10px
+ 
+
+.form-int:focus
+    border-color: $blue
+
+@function lighter($color, $tone)
+    $adjust: 16*$tone
+    @return adjust-color($color, $red: $adjust, $green: $adjust, $blue: $adjust)
+
+@keyframes appearance
+    0% 
+        opacity: 0     
+    100% 
+        opacity: 1
+        pointer-events: all
+
+@keyframes disappearance
+    0% 
+        opacity: 1   
+    100% 
+        opacity: 0
+        pointer-events: none        
+  

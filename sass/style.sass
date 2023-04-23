@@ -1,0 +1,545 @@
+@import '_constants'
+@import '_mixins'
+@import 'components/_slider.sass'
+@import 'components/_select.sass'
+@import 'components/_checkbox.sass'
+
+// header--------------------------------------
+
+.header
+    @include flex_center()
+    height: 100px   
+    &-inner
+        font-size: $fz-14 
+        width: 80%
+        height: 100%
+        @include flex_center()
+        justify-content: space-between
+        button
+            color: $blue
+        .header-item
+            height: 100%
+            flex: 1 1 33.33%
+            @include flex_center(50px)
+            & + .header-item
+                border-left: 1px solid $gray
+            .header-content
+                &-h
+                    font-weight: bold
+                    font-size: $fz-16
+                    margin-bottom: 8px
+            .header-btn
+                padding: 18px 20px
+                border: 2px solid $blue
+                @include btn_fill_parallelogram(25deg, $blue, #fff)
+            .nav-container
+                height: 100%
+                width: 90px
+                position: relative
+                .nav-btn
+                    width: 100%
+                    border-right: 1px solid $gray
+                    border-left: 1px solid $gray
+                    height: 100%
+                    font-size: 30px
+                .nav
+                    z-index: 2
+                    position: absolute
+                    width: 100%
+                    background-color: #fff
+                    max-height: 0
+                    overflow: hidden
+                    display: none
+                    animation: close .5s forwards
+                    box-shadow: $base-shadow
+                    .nav-li
+                        height: 50px
+                        &:hover
+                            background-color: $gray
+                        & + .nav-li
+                            border-top: 1px solid $gray
+                        a
+                            color: $blue
+                            height: 100%
+                            @include flex_center()
+                .nav.open
+                    animation: open .5s forwards
+                @keyframes open
+                    0%
+                        max-height: 0
+                    100%
+                       max-height: 500px
+                @keyframes close
+                    0%
+                        max-height: 500px
+                    100%
+                       max-height: 0
+            .right
+                text-align: right
+
+// intro--------------------------------------
+
+.section-outer.section-intro
+    background-color: $gray
+    height: 950px
+    background: url('/images/7.png') no-repeat top / cover
+    .section-inner
+        width: 60%
+        height: 100%
+        position: relative
+        .intro-body
+            font-size: $fz-24
+            width: 300px
+            .intro-cost
+                font-weight: bold
+                margin: 10px 0 50px 0
+        .form-discount
+            position: absolute
+            bottom: 0
+            padding: 50px
+            width: 900px
+            background-color: #fff
+            box-shadow: $base-shadow
+            .form-discount-inner
+                .form-h
+                    margin-bottom: 10px
+                .form-p
+                    margin-bottom: 50px
+            .form-btns-container
+                .form-btns-row
+                    display: flex
+                    > button, > input
+                        width: 33.33%
+                        height: 70px
+                    .form-int-container
+                        width: 33.33%
+                        > div
+                            margin-bottom: 10px
+                        button, input[type='text'], .select-box
+                            width: 100%
+                            height: 70px
+                        input[type='checkbox']
+                            height: 30px
+                            width: 30px
+                    .form-checkbox-container
+                        display: flex
+                        align-items: center
+                        gap: 10px
+                        padding: 20px 0             
+
+// advantages--------------------------------------
+
+.section-outer.section-advantages
+    .section-inner
+        @include flex_center(80px)
+        flex-direction: column
+        width: 60%
+        .advantages-container
+            width: 80%
+            @include flex_center(100px)
+            justify-content: space-evenly
+            flex-wrap: wrap
+            width: 100%
+            .advantage
+                @include flex_center(10px)
+                flex-direction: column
+                width: 20%
+                text-align: center
+
+// catalog--------------------------------------
+
+.section-outer.section-catalog
+    background-color: $gray
+    .section-inner
+        @include flex_center(80px)
+        flex-direction: column
+        width: 80%
+        .catalog-cards-container
+            @include flex_center(30px)
+            justify-content: space-between
+            flex-wrap: wrap
+            .catalog-card
+                width: 700px
+                height: 150px
+                background-position: center
+                background-size: cover
+                padding: 10px
+                color: #fff
+                text-transform: uppercase
+                font-size: $fz-14
+                position: relative
+                box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.2)
+                &:hover .catalog-btns-container
+                    display: flex       
+                .catalog-card-category
+                    background-color: rgba(126, 178, 255, 0.8)
+                    padding: 10px 30px
+                    display: inline-block
+                .catalog-btns-container
+                    position: absolute
+                    bottom: 0
+                    right: 0
+                    display: none
+                    justify-content: center
+                    align-items: stretch
+                    height: 35px
+                    button
+                        padding: 0 10px
+                        @include flex_center()
+                    .catalog-btn-order
+                        background-color: #fff
+                        color: $blue
+                    .catalog-btn-online
+                        background-color: rgba(126, 178, 255)
+                        color: #fff
+                    .catalog-btn-like
+                        background-color: $blue
+                        color: #fff
+                &:nth-child(1)
+                    background-image: url('/images/catalog/1.png')
+                &:nth-child(2)
+                    background-image: url('/images/catalog/2.png')
+                &:nth-child(3)
+                    background-image: url('/images/catalog/3.png')
+                &:nth-child(4)
+                    background-image: url('/images/catalog/4.png')
+                &:nth-child(5)
+                    background-image: url('/images/catalog/5.png')
+                &:nth-child(6)
+                    background-image: url('/images/catalog/6.png')
+                &:nth-child(7)
+                    background-image: url('/images/catalog/7.png')
+                &:nth-child(8)
+                    background-image: url('/images/catalog/8.png')
+                &:nth-child(9)
+                    background-image: url('/images/catalog/8.png')
+        .catalog-btn-container
+            @include flex_center(20px)
+            flex-direction: column
+            
+
+// articles--------------------------------------
+
+.section-outer.section-articles
+    .section-inner
+        @include flex_center(80px)
+        flex-direction: column
+        width: 80%
+        .articles-info-container
+            width: 100%
+            @include flex_center(30px)
+            justify-content: space-between
+            .articles-info-h
+                font-size: $fz-20
+            .articles-info-a a
+                border-bottom: 1px solid $blue
+        .articles-cards-container
+            @include flex_center(30px)
+            flex-wrap: wrap
+            width: 100%
+            justify-content: space-between
+            .article-card
+                @include flex_center()
+                flex-direction: column
+                box-shadow: $base-shadow
+                width: 300px
+                position: relative
+                .card-img
+                    height: 200px
+                    width: 100%
+                    object-fit: cover
+                .card-description
+                    width: 100%
+                    padding: 20px
+                    @include flex_center()
+                    background-color: #fff
+                    
+// products--------------------------------------
+
+.section-outer.section-products
+    padding: 120px 0
+    .section-inner
+        @include flex_center(80px)
+        flex-direction: column
+        width: 80%
+        .products-container
+            @include flex_center(30px)
+            flex-wrap: wrap
+            width: 100%
+            justify-content: space-between
+            .product
+                @include flex_center()
+                flex-direction: column
+                box-shadow: $base-shadow
+                width: 300px
+                position: relative
+                .product-img
+                    height: 200px
+                    width: 100%
+                    object-fit: cover
+                    z-index: 1
+                .product-description
+                    width: 100%
+                    padding: 20px
+                    display: flex
+                    justify-content: space-between
+                    align-items: baseline
+                    position: relative
+                    background-color: #fff
+                    z-index: 1
+                .product-btn-container
+                    @include flex_center()
+                    position: absolute
+                    z-index: 0
+                    width: 100%
+                    padding: 20px
+                    background-color: #fff
+                    left: 0
+                    .product-btn
+                        width: 100%   
+                &:hover ~ .product 
+                    pointer-events: none
+                    .product-img
+                        z-index: -1   
+                    .product-btn-container   
+                        z-index: -2 
+                @keyframes translate-btn-in
+                    0%
+                        top: 0 
+                    100%
+                        top: 100%
+                @keyframes translate-btn-out
+                    0%
+                        top: 100%        
+                    100%
+                        top: 0 
+// stages--------------------------------------
+
+.section-outer.section-stages
+    background-color: $gray
+    .section-inner
+        @include flex_center(80px)
+        flex-direction: column
+        width: 80%
+        .stages-container
+            @include flex_center(20px)
+            align-items: baseline
+            justify-content: space-evenly
+            width: 100%
+            flex-wrap: wrap
+            .stage
+                @include flex_center(20px)
+                flex-direction: column
+                text-align: center
+                width: 200px
+                .stage-name
+                    font-weight: bold
+
+
+// before-after--------------------------------------
+
+.section-outer.section-before-after
+    .section-inner
+        @include flex_center(80px)
+        flex-direction: column
+
+// reviews--------------------------------------
+
+.section-outer.section-reviews
+    background-color: $gray
+    padding-bottom: 300px
+    z-index: 2
+    .section-inner
+        @include flex_center(80px)
+        flex-direction: column
+        width: 80%
+        .reviews-container
+            @include flex_center(30px)
+            .reviews-container-item
+                &:nth-child(1)
+                    .review-person-img
+                        background-image: url('/images/2.png')
+                &:nth-child(2)
+                    .review-person-img
+                        background-image: url('/images/3.png')
+                &:nth-child(3)
+                    .review-person-img
+                        background-image: url('/images/4.png')
+                .review-body
+                    padding: 20px
+                    background-color: #fff
+                    border-radius: 10px
+                    margin-bottom: 40px
+                    position: relative
+                    &::before
+                        content: ''
+                        position: absolute
+                        bottom: -20px
+                        left: 50%
+                        transform: translateX(-50%)
+                        border: 40px solid transparent
+                        border-top: 40px solid #fff
+                        border-bottom: none
+                .review-person
+                    @include flex_center(20px)
+                    flex-direction: column
+                    text-align: center
+                    &-img
+                        height: 80px
+                        width: 80px
+                        border-radius: 50% 
+                        border: 2px solid $blue
+                        background-position: center
+                        background-size: cover
+                        margin-top: 20px
+    .form-buy
+        position: absolute
+        bottom: -250px
+        padding: 50px
+        width: 1200px
+        background-color: #fff
+        box-shadow: $base-shadow
+        .form-buy-h
+            margin-bottom: 20px
+        .form-buy-p
+            margin-bottom: 60px
+        .form-container
+            @include flex_center()
+            margin-bottom: 30px
+            input
+                width: 33.33%
+                height: 70px
+        .form-btn-container
+            @include flex_center(30px)
+            justify-content: start 
+            .form-p
+                width: 30%
+
+// about--------------------------------------
+
+.section-outer.section-about
+    padding-top: 300px
+    z-index: 1
+    .section-inner
+        width: 80%
+        @include flex_center(80px)
+        flex-direction: column
+        .about-body
+            @include flex_center(60px)
+            &-img
+                height: 300px
+            &-content
+                max-width: 400px
+                &-p + .about-body-content-p
+                    margin-top: 20px
+
+// contacts--------------------------------------
+
+.section-outer.section-contacts
+    background-color: $gray
+    padding-bottom: 0
+    .section-inner
+        width: 100%
+        @include flex_center()
+        flex-direction: column
+        .contacts-container
+            width: 60%
+            margin-top: 40px 
+            margin-bottom: 30px
+            @include flex_center(20px)
+            flex-wrap: wrap
+            justify-content: space-evenly
+            .contacts-item
+                @include flex_center(10px)
+                flex-direction: column
+                &-icon
+                    font-size: $fz-28
+                    color: $blue
+
+// questions--------------------------------------
+
+.section-outer.section-questions
+    height: 200px
+    padding: 80px 20px
+    .section-inner
+        @include flex_center(40px)
+        .questions-p
+            font-size: $fz-28
+            font-weight: bold
+        .questions-a a
+            border-bottom: 1px solid $blue
+
+// footer--------------------------------------
+
+.footer
+    @include flex_center()
+    align-items: stretch
+    min-height: 200px
+    padding: 40px
+    background-color: $c-h
+    font-size: $fz-16
+    &-inner
+        @include flex_center(20px)
+        width: 80%
+        justify-content: space-between
+        color: #fff
+        .logo-h
+            color: #fff
+            font-size: $fz-28
+        > div
+            display: flex
+            gap: 10px
+            justify-content: space-between
+            flex-direction: column
+            height: 100%
+            flex: 1 1 33.33%
+        .footer-payment
+            flex-direction: row
+            justify-content: center
+            .payment-item
+                cursor: pointer
+                width: 60px
+                height: 60px
+                background-color: #fff
+                border-radius: 50% 
+                @include flex_center()
+                img
+                    width: 80%
+                    height: fit-content
+        .mail a
+            color: #fff
+        .footer-contacts
+            align-items: flex-end
+            .contacts
+                &-btn
+                    height: 30px
+                    width: 30px
+                    color: $c-h
+                    border-radius: 5px
+                    background-color: #fff
+                    display: inline-flex
+                    align-items: center
+                    justify-content: center
+                    flex-direction: row
+                    &:hover
+                        background-color: $blue
+                    & + .contacts-btn  
+                        margin-left: 10px
+.scroll-btn
+    height: 50px
+    width: 100px
+    background-color: rgba(86, 114, 204, 0.7)
+    @include flex_center()
+    font-size: 20px
+    color: #fff  
+    position: sticky
+    bottom: 40px
+    right: 40px
+    margin-bottom: 40px
+    margin-left: auto
+    z-index: 10
+    border-radius: 10px
+    opacity: 0
+    pointer-events: none
+
+@import '_media.sass'

@@ -1,0 +1,112 @@
+@import '_constants'
+@import '_mixins'
+
+@media (max-width: 1612px)
+    .header .header-inner
+        width: 100% !important
+
+@media (max-width: 1400px) 
+    .header
+        .header-item:not(.header-item:nth-child(2))
+            flex-basis: 40% !important
+            gap: 20px
+        .header-btn
+            font-size: 12px
+        .header-item:nth-child(2)
+            flex-basis: 20% !important
+    .section-intro
+        .section-inner
+            width: 90% !important
+        .form-discount
+            width: 100% !important
+
+@media (max-width: 960px) 
+    .section-reviews
+        padding-bottom: 400px !important
+    .section-about
+        .about-body
+            @include flex_center(20px)
+            flex-direction: column    
+    .header
+        .header-item:nth-child(2)
+            display: none 
+        .header-btn
+            padding: 10px !important 
+            font-size: 10px !important
+        .header-content-h
+            font-size: $fz-14 !important
+
+@media (max-width: 1783px)
+    .section-catalog
+        .catalog-cards-container
+            justify-content: center !important
+        .catalog-card 
+            width: 90% !important
+    
+@media (max-width: 700px)
+    .header
+        height: 150px !important
+        .header-item:last-child
+            flex-direction: column
+        .nav-li
+            font-size: 10px
+    .section-articles
+        .articles-cards-container
+            justify-content: center !important
+    .section-products
+        .products-container
+            justify-content: center !important
+    .footer
+        .footer-inner
+            width: 100% !important
+        .logo-h
+            font-size: $fz-24
+    .section-reviews
+        padding-bottom: 700px !important
+        .form-btn-container
+            gap: 30px !important
+        .form-container
+            flex-direction: column
+            gap: 20px !important
+        .form-int
+            width: 100% !important
+    .section-intro
+        height: 1500px !important
+        .form-btns-row:not(.form-btns-row:nth-child(2))
+            flex-direction: column
+            gap: 10px
+        .form-int-container, .form-int, button
+            width: 100% !important
+
+@media (max-width: 800px)
+    .section-reviews
+        .form-btn-container
+            flex-direction: column
+            .form-p
+                width: 100% !important
+
+@media (max-width: 1240px)
+    .section-reviews
+        .form-buy
+            width: 90% !important
+
+@media (max-width: 1300px) 
+    .section-contacts       
+        .contacts-container
+            width: 90% !important
+    .section-reviews        
+        .reviews-container
+            flex-direction: column
+
+
+@media (max-width: 1458px) 
+    .footer
+        .footer-inner
+            flex-direction: column !important
+            text-align: center
+        .footer-contacts
+            align-items: center !important
+
+@media (max-width: 540px)
+    .slider_bl #slide1:checked ~ .slider-prev-next-control label::after
+        padding-left: 30px !important

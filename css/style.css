@@ -75,16 +75,6 @@ button {
   border-color: #3f7ddf;
 }
 
-@-webkit-keyframes appearance {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    pointer-events: all;
-  }
-}
-
 @keyframes appearance {
   0% {
     opacity: 0;
@@ -92,15 +82,6 @@ button {
   100% {
     opacity: 1;
     pointer-events: all;
-  }
-}
-@-webkit-keyframes disappearance {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    pointer-events: none;
   }
 }
 @keyframes disappearance {
@@ -508,8 +489,7 @@ button {
 }
 .select-box__current:focus + .select-box__list {
   opacity: 1;
-  -webkit-animation-name: none;
-          animation-name: none;
+  animation-name: none;
 }
 .select-box__current:focus + .select-box__list .select-box__option {
   cursor: pointer;
@@ -548,16 +528,11 @@ button {
   padding: 0;
   list-style: none;
   opacity: 0;
-  -webkit-animation-name: HideList;
-          animation-name: HideList;
-  -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-timing-function: step-start;
-          animation-timing-function: step-start;
+  animation-name: HideList;
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: step-start;
   box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
   z-index: 10;
 }
@@ -569,15 +544,6 @@ button {
 .select-box__option:hover, .select-box__option:focus {
   color: #546c84;
   background-color: #fbfbfb;
-}
-
-@-webkit-keyframes HideList {
-  from {
-    transform: scaleY(1);
-  }
-  to {
-    transform: scaleY(0);
-  }
 }
 
 @keyframes HideList {
@@ -788,8 +754,7 @@ button {
   max-height: 0;
   overflow: hidden;
   display: none;
-  -webkit-animation: close 0.5s forwards;
-          animation: close 0.5s forwards;
+  animation: close 0.5s forwards;
   box-shadow: 0px 4px 10px 1px rgba(0, 0, 0, 0.05);
 }
 .header-inner .header-item .nav-container .nav .nav-li {
@@ -810,16 +775,7 @@ button {
   gap: 0;
 }
 .header-inner .header-item .nav-container .nav.open {
-  -webkit-animation: open 0.5s forwards;
-          animation: open 0.5s forwards;
-}
-@-webkit-keyframes open {
-  0% {
-    max-height: 0;
-  }
-  100% {
-    max-height: 500px;
-  }
+  animation: open 0.5s forwards;
 }
 @keyframes open {
   0% {
@@ -827,14 +783,6 @@ button {
   }
   100% {
     max-height: 500px;
-  }
-}
-@-webkit-keyframes close {
-  0% {
-    max-height: 500px;
-  }
-  100% {
-    max-height: 0;
   }
 }
 @keyframes close {
@@ -852,7 +800,7 @@ button {
 .section-outer.section-intro {
   background-color: #f6f7f9;
   height: 950px;
-  background: url("/images/7.png") no-repeat top/cover;
+  background: url("../images/7.png") no-repeat top/cover;
 }
 .section-outer.section-intro .section-inner {
   width: 60%;
@@ -1005,31 +953,31 @@ button {
   color: #fff;
 }
 .section-outer.section-catalog .section-inner .catalog-cards-container .catalog-card:nth-child(1) {
-  background-image: url("/images/catalog/1.png");
+  background-image: url("../images/catalog/1.png");
 }
 .section-outer.section-catalog .section-inner .catalog-cards-container .catalog-card:nth-child(2) {
-  background-image: url("/images/catalog/2.png");
+  background-image: url("../images/catalog/2.png");
 }
 .section-outer.section-catalog .section-inner .catalog-cards-container .catalog-card:nth-child(3) {
-  background-image: url("/images/catalog/3.png");
+  background-image: url("../images/catalog/3.png");
 }
 .section-outer.section-catalog .section-inner .catalog-cards-container .catalog-card:nth-child(4) {
-  background-image: url("/images/catalog/4.png");
+  background-image: url("../images/catalog/4.png");
 }
 .section-outer.section-catalog .section-inner .catalog-cards-container .catalog-card:nth-child(5) {
-  background-image: url("/images/catalog/5.png");
+  background-image: url("../images/catalog/5.png");
 }
 .section-outer.section-catalog .section-inner .catalog-cards-container .catalog-card:nth-child(6) {
-  background-image: url("/images/catalog/6.png");
+  background-image: url("../images/catalog/6.png");
 }
 .section-outer.section-catalog .section-inner .catalog-cards-container .catalog-card:nth-child(7) {
-  background-image: url("/images/catalog/7.png");
+  background-image: url("../images/catalog/7.png");
 }
 .section-outer.section-catalog .section-inner .catalog-cards-container .catalog-card:nth-child(8) {
-  background-image: url("/images/catalog/8.png");
+  background-image: url("../images/catalog/8.png");
 }
 .section-outer.section-catalog .section-inner .catalog-cards-container .catalog-card:nth-child(9) {
-  background-image: url("/images/catalog/8.png");
+  background-image: url("../images/catalog/8.png");
 }
 .section-outer.section-catalog .section-inner .catalog-btn-container {
   display: flex;
@@ -1167,28 +1115,12 @@ button {
 .section-outer.section-products .section-inner .products-container .product:hover ~ .product .product-btn-container {
   z-index: -2;
 }
-@-webkit-keyframes translate-btn-in {
-  0% {
-    top: 0;
-  }
-  100% {
-    top: 100%;
-  }
-}
 @keyframes translate-btn-in {
   0% {
     top: 0;
   }
   100% {
     top: 100%;
-  }
-}
-@-webkit-keyframes translate-btn-out {
-  0% {
-    top: 100%;
-  }
-  100% {
-    top: 0;
   }
 }
 @keyframes translate-btn-out {
@@ -1262,13 +1194,13 @@ button {
   gap: 30px;
 }
 .section-outer.section-reviews .section-inner .reviews-container .reviews-container-item:nth-child(1) .review-person-img {
-  background-image: url("/images/2.png");
+  background-image: url("../images/2.png");
 }
 .section-outer.section-reviews .section-inner .reviews-container .reviews-container-item:nth-child(2) .review-person-img {
-  background-image: url("/images/3.png");
+  background-image: url("../images/3.png");
 }
 .section-outer.section-reviews .section-inner .reviews-container .reviews-container-item:nth-child(3) .review-person-img {
-  background-image: url("/images/4.png");
+  background-image: url("../images/4.png");
 }
 .section-outer.section-reviews .section-inner .reviews-container .reviews-container-item .review-body {
   padding: 20px;
@@ -1471,7 +1403,6 @@ button {
 .footer-inner .footer-payment .payment-item img {
   width: 80%;
   height: -moz-fit-content;
-  height: -webkit-fit-content;
   height: fit-content;
 }
 .footer-inner .mail a {
@@ -1508,7 +1439,6 @@ button {
   gap: 0;
   font-size: 20px;
   color: #fff;
-  position: -webkit-sticky;
   position: sticky;
   bottom: 40px;
   right: 40px;
@@ -1747,4 +1677,4 @@ button {
   .slider_bl #slide1:checked ~ .slider-prev-next-control label::after {
     padding-left: 30px !important;
   }
-}
+}/*# sourceMappingURL=style.css.map */
